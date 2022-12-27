@@ -1,56 +1,23 @@
 
-## TOC
-- [What I'm trying to do](#what-im-trying-to-do)
-- [Error Message](#error-message)
-- [Log File URL](#log-file-url)
-- [What I've tried:](#what-ive-tried)
-- [My Environment Specifications](#my-environment-specifications)
-  - [Windows Device Specifications:](#windows-device-specifications)
-  - [Windows Specifications:](#windows-specifications)
-  - [Motherboard](#motherboard)
-- [TOP PART OF DxDiag REPORT (the full report is over 2000 lines):](#top-part-of-dxdiag-report-the-full-report-is-over-2000-lines)
-  - [System Information](#system-information)
-  - [DxDiag Notes](#dxdiag-notes)
-  - [DirectX Debug Levels](#directx-debug-levels)
-  - [Display Devices](#display-devices)
-- [HWINFO GPU REPORT](#hwinfo-gpu-report)
+# GPU Issue Description
 
+I'm having an issue with my gpu not showing up in Settings > Display > Graphics settings > ANY_DEVICE_HERE > Options
 
-# What I'm trying to do
-- - Record a video with live narration
-
-
-# Error Message
-- Occurs immediately when I attempt to record
-
-```
-NVENC Error: Unsupported device. Check your video card supports NVENC and that the drivers are up to date.
-
-```
-
-# Log File URL
-- [Log File](https://obsproject.com/logs/fmp5TVrFIyQ2oXm4)
+In that my dedicated GPU (NVIDIA GeForce GTX 660 Ti) is not showing up in Options
 
 
 # What I've tried:
-1) Verified my GPU does support NVENC via:
-   1) [This guide](https://help.elgato.com/hc/en-us/articles/360027954992-Which-NVIDIA-graphic-cards-do-support-NVENC-technology-)
-   2) [And this list](https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units)
-2) Verified that my GPU is available in Device manager
-3) Verified that its drivers are up to date in Device manager > Display Adapters
-4) Verified that the GPU is operating correctly via Device manager
-5) Installed any driver updates available for my GPU from NVIDIA's website:
+
+1) Verified that my GPU is available in Device manager
+2) Verified that its drivers are up to date in Device manager > Display Adapters
+3) Verified that the GPU is operating correctly via Device manager
+4) Installed any driver updates available for my GPU from NVIDIA's website:
    1) Installed Game Ready Driver (GRD): 474.14-desktop-win10-win11-64bit-international-dch-whql.exe
    2) Studio Driver: None available
-6) Verified the GPU is not being disabled by the Windows system power settings
-7) Verified in BIOS that the GPU is selected as the primary graphics processor and that the correct slot was selected
-8) Verified that the issue persists in safe mode
-9)  Verified motherboard using the latest version of BIOS
-10) Verified problem persists when attempting to record with each of the settings  at: Settings > Output > Recording > Encoder
-   1) Software (x264)
-   2) Hardware (QSV, H.264)
-   3) Hardware (NVENC,H.264)
-
+5) Verified the GPU is not being disabled by the Windows system power settings
+6) Verified in BIOS that the GPU is selected as the primary graphics processor and that the correct slot was selected
+7) Verified that the issue persists in safe mode
+8) Verified motherboard using the latest version of BIOS
 
 # My Environment Specifications
 
@@ -74,8 +41,6 @@ NVENC Error: Unsupported device. Check your video card supports NVENC and that t
 - ASRock Z77 Extreme4
 
 # TOP PART OF DxDiag REPORT (the full report is over 2000 lines):
-
-- [Full Report](DxDiag_2022_12_26_03_27_PM.txt)
 
 ------------------
 System Information
@@ -192,6 +157,24 @@ Driver Date:                                                                    
 DCH/UWD Driver:                                                                 Capable
 DeviceInstanceId                                                                PCI\VEN_10DE&DEV_1183&SUBSYS_841F1043&REV_A1\4&15001D53&0&0008
 Location Paths                                                                  PCIROOT(0)#PCI(0100)#PCI(0000)
+
+
+
+
+# Instructions & Steps
+
+## Starting your computer in Safe Mode
+
+1. Close any open programs and save your work.
+2. Press the Windows key + R on your keyboard to open the Run dialog box.
+3. Type "msconfig" into the Run dialog box and hit Enter. This will open the System Configuration utility.
+4. In the System Configuration utility, go to the "Boot" tab.
+5. Under "Boot options", check the box next to "Safe boot" and select "Minimal" from the drop-down menu.
+6. Click on the "Apply" button, and then click on the "OK" button.
+7. The system will prompt you to restart your computer. Click on the "Restart" button to restart your computer in Safe Mode.
+
+- When your computer starts up in Safe Mode, you will see the words "Safe Mode" in all four corners of the screen. This indicates that you are running in Safe Mode. You can use Safe Mode to troubleshoot issues with your system or to install or uninstall software. When you are finished, you can restart your computer and boot into normal mode by repeating the steps above and unchecking the "Safe boot" option.
+
 
 ## Links open just before giving up
 - [answers.microsoft](https://answers.microsoft.com/en-us/windows/forum/all/unable-to-select-gpu-in-windows-graphics-settings/7c879d69-d482-4734-8709-33a54f4a5c78)
