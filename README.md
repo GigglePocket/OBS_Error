@@ -17,7 +17,7 @@
 
 
 # What I'm trying to do
-- Record a 3 minute video with live narration detailing a final project for a cs course
+- - Record a video with live narration
 
 
 # Error Message
